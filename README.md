@@ -1,6 +1,6 @@
 # cafe_qr_menu
 
-A progressive web application which intended to show customers a qr menu. 
+A progressive web application which intended to show customers a qr menu.
 
 ## Getting Started
 
