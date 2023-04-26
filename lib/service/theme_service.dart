@@ -7,7 +7,7 @@ class ThemeService {
     return ThemeData(
       useMaterial3: true,
       colorSchemeSeed: ColorConstants.primaryColor,
-      fontFamily: TextConstants.fontName,
+      fontFamily: TextConstants.primaryFontName,
     );
   }
 }

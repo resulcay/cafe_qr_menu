@@ -35,3 +35,7 @@ flutter:
     - family: Gabriela
       fonts:
         - asset: assets/fonts/Gabriela-Regular.ttf
+        
+    - family: VI Moc Lan
+      fonts:
+        - asset: assets/fonts/VI-Moc-Lan.ttf

@@ -1,3 +1,4 @@
 class TextConstants {
-  static const fontName = 'Gabriela';
+  static const primaryFontName = 'Gabriela';
+  static const secondaryFontName = 'VI Moc Lan';
 }
