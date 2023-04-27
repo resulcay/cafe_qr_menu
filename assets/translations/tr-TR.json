@@ -1,3 +1,8 @@
 {
-    "title": "Cafe 8 QR Menü"
+    "title": "Cafe 8 QR Menü",
+    "welcome": "Hoşgeldiniz",
+    "coldDrink": "Soğuk İçecekler",
+    "hotDrink": "Sıcak İçecekler",
+    "fries": "Ara Sıcaklar",
+    "meals": "Ana Yemekler"
 }

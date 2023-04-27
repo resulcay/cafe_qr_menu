@@ -2,5 +2,10 @@
 
 abstract class  LocaleKeys {
   static const title = 'title';
+  static const welcome = 'welcome';
+  static const coldDrink = 'coldDrink';
+  static const hotDrink = 'hotDrink';
+  static const fries = 'fries';
+  static const meals = 'meals';
 
 }
