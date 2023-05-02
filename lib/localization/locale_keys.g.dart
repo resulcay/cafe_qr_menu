@@ -6,6 +6,6 @@ abstract class  LocaleKeys {
   static const coldDrink = 'coldDrink';
   static const hotDrink = 'hotDrink';
   static const fries = 'fries';
-  static const meals = 'meals';
+  static const grill = 'grill';
 
 }

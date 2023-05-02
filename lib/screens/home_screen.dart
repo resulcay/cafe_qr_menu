@@ -3,10 +3,12 @@ import 'package:cafe_qr_menu/constants/locale_constants.dart';
 import 'package:cafe_qr_menu/constants/text_constants.dart';
 import 'package:cafe_qr_menu/localization/locale_keys.g.dart';
 import 'package:cafe_qr_menu/service/path_service.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
+import '../components/category_widget.dart';
 import '../components/language_section.dart';
+import '../components/menu_top_section.dart';
+import '../components/welcome_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -33,192 +35,89 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           const MenuTopSection(),
                           const Divider(),
+                          const SizedBox(height: 30),
                           const WelcomeCard(),
-                          const SizedBox(height: 10),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(10),
-                                child: Column(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(20),
-                                      child: SizedBox(
-                                        height: 150,
-                                        width: 150,
-                                        child: Image.asset(
-                                            fit: BoxFit.cover,
-                                            PathService.imagePathProvider(
-                                              'ice_small.png',
-                                            )),
-                                      ),
-                                    ),
-                                    const Text(
-                                      LocaleKeys.coldDrink,
-                                      style: TextStyle(fontSize: 18),
-                                    ).tr()
-                                  ],
+                          const SizedBox(height: 30),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisSize: MainAxisSize.max,
+                              children: const [
+                                CategoryWidget(
+                                  category: LocaleKeys.coldDrink,
+                                  imagePath: 'ice_small.png',
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(10),
-                                child: Column(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(20),
-                                      child: SizedBox(
-                                        height: 150,
-                                        width: 150,
-                                        child: Image.asset(
-                                          fit: BoxFit.fill,
-                                          PathService.imagePathProvider(
-                                              'coffee_small.png'),
-                                        ),
-                                      ),
-                                    ),
-                                    const Text(
-                                      LocaleKeys.hotDrink,
-                                      style: TextStyle(fontSize: 18),
-                                    ).tr()
-                                  ],
+                                CategoryWidget(
+                                  category: LocaleKeys.hotDrink,
+                                  imagePath: 'coffee_small.png',
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(10),
-                                child: Column(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(20),
-                                      child: SizedBox(
-                                        height: 150,
-                                        width: 150,
-                                        child: Image.asset(
-                                            fit: BoxFit.cover,
-                                            PathService.imagePathProvider(
-                                              'fries_small.png',
-                                            )),
-                                      ),
-                                    ),
-                                    const Text(
-                                      LocaleKeys.fries,
-                                      style: TextStyle(fontSize: 18),
-                                    ).tr()
-                                  ],
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisSize: MainAxisSize.max,
+                              children: const [
+                                CategoryWidget(
+                                  category: LocaleKeys.fries,
+                                  imagePath: 'fries.png',
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(10),
-                                child: Column(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(20),
-                                      child: SizedBox(
-                                        height: 150,
-                                        width: 150,
-                                        child: Image.asset(
-                                          fit: BoxFit.fill,
-                                          PathService.imagePathProvider(
-                                              'grill_small.png'),
-                                        ),
-                                      ),
-                                    ),
-                                    const Text(
-                                      LocaleKeys.meals,
-                                      style: TextStyle(fontSize: 18),
-                                    ).tr()
-                                  ],
+                                CategoryWidget(
+                                  category: LocaleKeys.grill,
+                                  imagePath: 'grill_small.png',
                                 ),
-                              ),
-                            ],
-                          )
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     )
                   ],
                 ),
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset(
+                      PathService.imagePathProvider('ice.png'),
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        height: 1000,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: 15,
+                          itemBuilder: (context, index) => Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            mainAxisSize: MainAxisSize.max,
+                            children: const [
+                              CategoryWidget(
+                                category: LocaleKeys.coldDrink,
+                                imagePath: 'ice_small.png',
+                              ),
+                              CategoryWidget(
+                                category: LocaleKeys.hotDrink,
+                                imagePath: 'coffee_small.png',
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                const SizedBox(height: 600)
               ],
             ),
           ),
         ),
       ),
-    );
-  }
-}
-
-class WelcomeCard extends StatelessWidget {
-  const WelcomeCard({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 1,
-      child: Text(
-        LocaleKeys.welcome.tr(),
-        style: const TextStyle(
-          color: ColorConstants.primaryVariant,
-          fontSize: 55,
-        ),
-      ),
-    );
-  }
-}
-
-class MenuTopSection extends StatelessWidget {
-  const MenuTopSection({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          padding: const EdgeInsets.only(left: 5),
-          width: 150,
-          height: 80,
-          child: Row(
-            children: [
-              const Text(
-                'cafe',
-                style: TextStyle(
-                  color: ColorConstants.primaryVariant,
-                  fontFamily: TextConstants.secondaryFontName,
-                  fontSize: 50,
-                ),
-              ),
-              Image.asset(
-                  PathService.imagePathProvider('cafe_logo_transparent.png'))
-            ],
-          ),
-        ),
-        const Spacer(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          mainAxisSize: MainAxisSize.max,
-          children: const [
-            LanguageButton(
-              locale: LocaleConstants.trLocale,
-              svgPath: 'tr.svg',
-            ),
-            LanguageButton(
-              locale: LocaleConstants.enLocale,
-              svgPath: 'gb.svg',
-            ),
-            LanguageButton(
-              locale: LocaleConstants.arLocale,
-              svgPath: 'ae.svg',
-            ),
-          ],
-        ),
-      ],
     );
   }
 }

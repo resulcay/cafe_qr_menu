@@ -1,3 +1,4 @@
+import 'package:cafe_qr_menu/screens/home_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -18,16 +19,22 @@ class LanguageButton extends StatefulWidget {
 }
 
 class _LanguageButtonState extends State<LanguageButton> {
+  setLocale() {
+    context.setLocale(widget.locale).whenComplete(() {
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HomeScreen(),
+          ));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: const BorderRadius.all(Radius.circular(15)),
       child: GestureDetector(
-        onTap: () {
-          setState(() {
-            context.setLocale(widget.locale);
-          });
-        },
+        onTap: setLocale,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5),
           child: SvgPicture.asset(
