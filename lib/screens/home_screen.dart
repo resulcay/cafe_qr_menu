@@ -1,12 +1,9 @@
 import 'package:cafe_qr_menu/constants/color_constants.dart';
-import 'package:cafe_qr_menu/constants/locale_constants.dart';
-import 'package:cafe_qr_menu/constants/text_constants.dart';
 import 'package:cafe_qr_menu/localization/locale_keys.g.dart';
 import 'package:cafe_qr_menu/service/path_service.dart';
 import 'package:flutter/material.dart';
 
 import '../components/category_widget.dart';
-import '../components/language_section.dart';
 import '../components/menu_top_section.dart';
 import '../components/welcome_card.dart';
 
@@ -16,6 +13,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorConstants.pureBlack,
       body: Center(
         child: Container(
           constraints: const BoxConstraints(maxWidth: 896),
@@ -88,11 +86,11 @@ class HomeScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: SizedBox(
-                        height: 1000,
+                        height: 700,
                         child: ListView.builder(
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
-                          itemCount: 15,
+                          itemCount: 6,
                           itemBuilder: (context, index) => Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             mainAxisSize: MainAxisSize.max,
