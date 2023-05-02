@@ -12,7 +12,7 @@ class WelcomeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: ColorConstants.transparentTeal.withOpacity(.4),
+      color: ColorConstants.transparentTeal,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Text(

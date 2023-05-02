@@ -31,13 +31,13 @@ class CategoryWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(5),
           child: Card(
-            color: ColorConstants.transparentTeal.withOpacity(.4),
+            color: ColorConstants.transparentTeal,
             child: Padding(
               padding: const EdgeInsets.all(5),
               child: Text(
                 category,
                 style: const TextStyle(
-                  color: Colors.white70,
+                  color: ColorConstants.pureWhite,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
