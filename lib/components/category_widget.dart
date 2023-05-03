@@ -30,19 +30,16 @@ class CategoryWidget extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(5),
-          child: Card(
-            color: ColorConstants.transparentTeal,
-            child: Padding(
-              padding: const EdgeInsets.all(5),
-              child: Text(
-                category,
-                style: const TextStyle(
-                  color: ColorConstants.pureWhite,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ).tr(),
-            ),
+          child: Padding(
+            padding: const EdgeInsets.all(5),
+            child: Text(
+              category,
+              style: const TextStyle(
+                color: ColorConstants.pureWhite,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ).tr(),
           ),
         )
       ],
