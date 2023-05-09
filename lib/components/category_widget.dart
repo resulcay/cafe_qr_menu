@@ -1,4 +1,5 @@
 import 'package:cafe_qr_menu/constants/color_constants.dart';
+import 'package:cafe_qr_menu/extensions/media_query_extension.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -19,9 +20,13 @@ class CategoryWidget extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(20),
-          child: SizedBox(
-            height: 150,
-            width: 150,
+          child: Container(
+            height: context.width * .35,
+            width: context.width * .35,
+            constraints: const BoxConstraints(
+              maxWidth: 300,
+              maxHeight: 300,
+            ),
             child: Image.asset(
               fit: BoxFit.cover,
               PathService.imagePathProvider(imagePath),
@@ -35,7 +40,6 @@ class CategoryWidget extends StatelessWidget {
             child: Text(
               category,
               style: const TextStyle(
-                color: ColorConstants.pureWhite,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),

@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       onGenerateTitle: (context) => LocaleKeys.title.tr(),
-      theme: ThemeService.themeConfiguration(),
+      theme: ThemeService.themeConfiguration(context),
       home: const HomeScreen(),
     );
   }

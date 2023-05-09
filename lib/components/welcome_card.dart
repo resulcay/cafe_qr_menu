@@ -14,10 +14,7 @@ class WelcomeCard extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Text(
         LocaleKeys.welcome.tr(),
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 30,
-        ),
+        style: const TextStyle(fontSize: 30),
       ),
     );
   }

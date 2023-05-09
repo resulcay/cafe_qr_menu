@@ -42,14 +42,17 @@ class MenuTopSection extends StatelessWidget {
             LanguageButton(
               locale: LocaleConstants.trLocale,
               svgPath: 'tr.svg',
+              language: 'tr',
             ),
             LanguageButton(
               locale: LocaleConstants.enLocale,
               svgPath: 'gb.svg',
+              language: 'en',
             ),
             LanguageButton(
               locale: LocaleConstants.arLocale,
               svgPath: 'ae.svg',
+              language: 'ar',
             ),
           ],
         ),

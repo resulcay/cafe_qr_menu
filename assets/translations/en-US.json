@@ -3,6 +3,6 @@
     "welcome": "Welcome",
     "coldDrink": "Cold Drinks",
     "hotDrink": "Hot Drinks",
-    "fries": "Fries",
-    "grill": "Meals"
+    "entree": "Entrees",
+    "mainCourse": "Main Courses"
 }

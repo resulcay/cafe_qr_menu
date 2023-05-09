@@ -3,6 +3,6 @@
     "welcome": "Hoşgeldiniz",
     "coldDrink": "Soğuk İçecekler",
     "hotDrink": "Sıcak İçecekler",
-    "fries": "Ara Sıcaklar",
-    "grill": "Ana Yemekler"
+    "entree": "Ara Sıcaklar",
+    "mainCourse": "Ana Yemekler"
 }
