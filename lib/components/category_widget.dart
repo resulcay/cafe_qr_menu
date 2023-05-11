@@ -1,4 +1,3 @@
-import 'package:cafe_qr_menu/constants/color_constants.dart';
 import 'package:cafe_qr_menu/extensions/media_query_extension.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -35,16 +34,13 @@ class CategoryWidget extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(5),
-          child: Padding(
-            padding: const EdgeInsets.all(5),
-            child: Text(
-              category,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ).tr(),
-          ),
+          child: Text(
+            category,
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ).tr(),
         )
       ],
     );
