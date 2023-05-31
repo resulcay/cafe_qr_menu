@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cafe_qr_menu/extensions/media_query_extension.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -33,14 +34,14 @@ class CategoryWidget extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(5),
-          child: Text(
-            category,
-            style: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: AutoSizeText(
+            category.tr(),
+            style: TextStyle(
+              fontSize: 17 * context.widthFactor,
+              fontWeight: FontWeight.w300,
             ),
-          ).tr(),
+          ),
         )
       ],
     );

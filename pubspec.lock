@@ -17,6 +17,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
+  auto_size_text:
+    dependency: "direct main"
+    description:
+      name: auto_size_text
+      sha256: "3f5261cd3fb5f2a9ab4e2fc3fba84fd9fcaac8821f20a1d4e71f557521b22599"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -253,14 +261,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.4"
-  scaffold_gradient_background:
+  scroll_to_index:
     dependency: "direct main"
     description:
-      name: scaffold_gradient_background
-      sha256: "904ee5ef0ea69e980cc4c7645418a0cd5ef94732c409f5ac114f74f51b4dd0a7"
+      name: scroll_to_index
+      sha256: b707546e7500d9f070d63e5acf74fd437ec7eeeb68d3412ef7b0afada0b4f176
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.3+1"
+    version: "3.0.1"
   shared_preferences:
     dependency: transitive
     description:

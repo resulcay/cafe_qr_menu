@@ -1,4 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../localization/locale_keys.g.dart';
 import '../category_widget.dart';
@@ -6,9 +8,11 @@ import '../menu_top_section.dart';
 import '../welcome_card.dart';
 
 class CategorySection extends StatelessWidget {
+  final AutoScrollController controller;
   const CategorySection({
-    super.key,
-  });
+    Key? key,
+    required this.controller,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +30,26 @@ class CategorySection extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.max,
-                children: const [
-                  CategoryWidget(
-                    category: LocaleKeys.coldDrink,
-                    imagePath: 'ice_small.png',
+                children: [
+                  GestureDetector(
+                    onTap: () => controller.scrollToIndex(
+                      1,
+                      preferPosition: AutoScrollPosition.begin,
+                    ),
+                    child: const CategoryWidget(
+                      category: LocaleKeys.coldDrink,
+                      imagePath: 'cold_drink.jpg',
+                    ),
                   ),
-                  CategoryWidget(
-                    category: LocaleKeys.hotDrink,
-                    imagePath: 'coffee_small.png',
+                  GestureDetector(
+                    onTap: () => controller.scrollToIndex(
+                      2,
+                      preferPosition: AutoScrollPosition.begin,
+                    ),
+                    child: const CategoryWidget(
+                      category: LocaleKeys.hotDrink,
+                      imagePath: 'coffee_small.png',
+                    ),
                   ),
                 ],
               ),
@@ -43,14 +59,26 @@ class CategorySection extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.max,
-                children: const [
-                  CategoryWidget(
-                    category: LocaleKeys.entree,
-                    imagePath: 'fries.png',
+                children: [
+                  GestureDetector(
+                    onTap: () => controller.scrollToIndex(
+                      3,
+                      preferPosition: AutoScrollPosition.begin,
+                    ),
+                    child: const CategoryWidget(
+                      category: LocaleKeys.entree,
+                      imagePath: 'fries.png',
+                    ),
                   ),
-                  CategoryWidget(
-                    category: LocaleKeys.mainCourse,
-                    imagePath: 'grill_small.png',
+                  GestureDetector(
+                    onTap: () => controller.scrollToIndex(
+                      4,
+                      preferPosition: AutoScrollPosition.begin,
+                    ),
+                    child: const CategoryWidget(
+                      category: LocaleKeys.mainCourse,
+                      imagePath: 'grill_small.png',
+                    ),
                   ),
                 ],
               ),

@@ -8,10 +8,12 @@ class Product {
   );
 
   static final List<Product> coldDrinks = [
-    Product('cola', 'ice_small.png'),
-    Product('cola', 'ice_small.png'),
-    Product('cola', 'ice_small.png'),
-    Product('cola', 'ice_small.png'),
+    Product('Coca Cola', 'cola.jpeg'),
+    Product('Coca Cola Zero', 'cola_zero.jpeg'),
+    Product('Cappy Cherry Glass', 'cappy_cherry_glass.jpeg'),
+    Product('Cappy Mixed Glass', 'cappy_mixed_glass.jpeg'),
+    Product('Cappy Peach Glass', 'cappy_peach_glass.jpeg'),
+    Product('Soda Pop', 'soda_pop.png')
   ];
   static final List<Product> hotDrinks = [
     Product('coffee', 'coffee_small.png'),

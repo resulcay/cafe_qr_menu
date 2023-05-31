@@ -1,5 +1,6 @@
 import 'package:cafe_qr_menu/extensions/media_query_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 import '../models/product.dart';
 import '../service/path_service.dart';
@@ -17,50 +18,47 @@ class ConsumableItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
-      child: Stack(
-        alignment: Alignment.centerLeft,
+      child: Row(
         children: [
-          SizedBox(
-            width: double.infinity,
+          Expanded(
             child: Container(
-              alignment: Alignment.centerRight,
-              height: context.width * .2,
-              width: context.width * .2,
+              height: context.width * .08,
+              margin: const EdgeInsets.only(right: 5),
               constraints: const BoxConstraints(
-                maxHeight: 200,
-                maxWidth: 200,
+                maxWidth: 800,
+                maxHeight: 70,
               ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.asset(
-                  fit: BoxFit.cover,
-                  PathService.imagePathProvider(product.imagePath),
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: const BorderRadius.only(
+                  topRight: Radius.circular(10),
+                  bottomRight: Radius.circular(10),
+                ),
+              ),
+              child: Center(
+                child: AutoSizeText(
+                  product.name,
+                  style: TextStyle(fontSize: 20 * context.widthFactor),
                 ),
               ),
             ),
           ),
           Container(
-            height: context.width * .1,
-            width: double.infinity,
+            alignment: Alignment.centerRight,
+            height: context.width * .2,
+            width: context.width * .2,
             constraints: const BoxConstraints(
-              maxWidth: 800,
-              maxHeight: 100,
+              maxHeight: 200,
+              maxWidth: 200,
             ),
-            margin: const EdgeInsets.only(right: 80),
-            decoration: BoxDecoration(
-              color: color,
-              borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(10),
-                bottomRight: Radius.circular(10),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                fit: BoxFit.cover,
+                PathService.imagePathProvider(product.imagePath),
               ),
             ),
-            child: Center(
-              child: Text(
-                product.name,
-                style: const TextStyle(fontSize: 16),
-              ),
-            ),
-          )
+          ),
         ],
       ),
     );

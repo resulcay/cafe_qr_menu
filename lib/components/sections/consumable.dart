@@ -1,3 +1,5 @@
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cafe_qr_menu/extensions/media_query_extension.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -29,10 +31,13 @@ class Consumable extends StatelessWidget {
                 color: color,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    title,
-                    style: const TextStyle(fontSize: 22),
-                  ).tr(),
+                  child: AutoSizeText(
+                    title.tr(),
+                    style: TextStyle(
+                      fontSize: 23 * context.widthFactor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
             ),

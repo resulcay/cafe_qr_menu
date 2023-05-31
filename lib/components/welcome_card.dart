@@ -1,3 +1,4 @@
+import 'package:cafe_qr_menu/extensions/media_query_extension.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class WelcomeCard extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Text(
         LocaleKeys.welcome.tr(),
-        style: const TextStyle(fontSize: 30),
+        style: TextStyle(fontSize: 27 * context.widthFactor),
       ),
     );
   }
